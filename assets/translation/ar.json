@@ -1,9 +1,34 @@
 {
+
   "Hello": "مرحبا",
   "Email": "البريد الإلكتروني",
   "Password": "كلمة المرور",
   "Login": "تسجيل الدخول",
   "Sign Up": "إنشاء حساب",
   "change_language": "تغيير اللغة",
-  "Welcome to the app!": "مرحبًا بك في التطبيق!"
+  "Welcome to the app!": "مرحبًا بك في التطبيق!",
+  "Home": "الرئيسية",
+  "Store": "المتجر",
+  "Services": "الخدمات",
+  "Projects": "المشاريع",
+  "To-Do": "المهام",
+  "Search": "بحث",
+  "Explore": "استكشف",
+  "Learn More": "اعرف أكثر",
+  "Lets Speak IT Fluently!": "دعنا نتحدث تقنية بطلاقة!",
+  "Master tech skills and join our vibrant community": "أتقن مهارات التكنولوجيا وانضم إلى مجتمعنا النابض بالحياة",
+  "Get Started": "ابدأ الآن",
+  "KEY OF INFORMATION TECHNOLOGY": "مفتاح تكنولوجيا المعلومات",
+  "Today": "اليوم",
+  "Submit Project Proposal": "تقديم اقتراح المشروع",
+  "Complete and submit the final project proposal for the...": "أكمل وقدم اقتراح المشروع النهائي...",
+  "7:00PM-8:30PM": "7:00PM-8:30PM",
+  "Inbox": "الوارد",
+  "Profile": "الملف الشخصي",
+  "Edit Profile": "تعديل الملف الشخصي",
+  "Notification": "الإشعارات",
+  "Shipping Address": "عنوان الشحن",
+  "Change Password": "تغيير كلمة المرور",
+  "Sign Out": "تسجيل الخروج"
+
 }

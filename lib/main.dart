@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:untitled/screens/grid_view_screen.dart';
-import 'package:untitled/screens/image_picker_screen.dart';
-import 'package:untitled/screens/images.dart';
-import 'package:untitled/screens/login_screen.dart';
+import 'package:untitled/app_theme.dart';
+import 'package:untitled/screens/chatbot_screen.dart';
+import 'package:untitled/screens/contact_us_screen.dart';
+import 'package:untitled/screens/faq_screen.dart';
 import 'package:untitled/screens/signUp_screen.dart';
 import 'package:untitled/screens/splash_screen.dart';
-import 'screens/custom_widget_screen.dart';
-import 'screens/home_screen.dart';
-import 'screens/homescreen.dart';
-import 'screens/list_view_screen.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:untitled/screens/homescreen.dart';
+import 'package:untitled/screens/store_screen.dart';
+import 'package:untitled/screens/services_screen.dart';
+import 'package:untitled/screens/projects_screen.dart';
+import 'package:untitled/screens/courses_screen.dart';
+import 'package:untitled/screens/cart_screen.dart';
+import 'package:untitled/screens/checkout_screen.dart';
+import 'package:untitled/screens/main_screen.dart';
+import 'package:untitled/screens/profile_screen.dart';
+import 'package:untitled/screens/edit_profile_screen.dart';
+import 'package:provider/provider.dart'; // موجودة عندك
+import 'package:untitled/screens/cart_provider.dart'; // موجودة عندك
 
-import 'screens/sqlflite_screen.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await EasyLocalization.ensureInitialized();
-
+void main() {
   debugPaintSizeEnabled = false;
 
+  // يجب تغليف التطبيق بـ ChangeNotifierProvider هنا
   runApp(
-    EasyLocalization(
-      supportedLocales: [Locale('en'), Locale('ar')],
-      path: 'assets/translation',
-      fallbackLocale: Locale('en'),
+    ChangeNotifierProvider(
+      create: (context) => CartProvider(),
       child: const MyApp(),
     ),
   );
@@ -37,15 +37,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      localizationsDelegates: context.localizationDelegates, // مهم
-      supportedLocales: context.supportedLocales,           // مهم
-      locale: context.locale,                               // مهم
-      home:SignUpScreen(),
+      debugShowCheckedModeBanner: false, // لإخفاء شريط Debug
+      title: 'KIT App',
+      theme: AppTheme.lightTheme,
+
+      initialRoute: '/splash',
+      routes: {
+        '/': (context) => const MainScreen(),
+        '/splash': (context) => const SplashScreen(),
+        '/home': (context) => const Homescreen(),
+        '/store': (context) => const StoreScreen(),
+        '/services': (context) => const ServicesScreen(),
+        '/projects': (context) => const ProjectsScreen(),
+        '/courses': (context) => const CoursesScreen(),
+        '/cart': (context) => const CartScreen(),
+        '/checkout': (context) => const CheckoutScreen(),
+        '/profile': (context) => const ProfileScreen(),
+        '/edit-profile': (context) => const EditProfileScreen(),
+        '/SignUp': (context) => const SignUpScreen(),
+        '/FAQ':  (context) => const FaqScreen(),
+        '/CHAT': (context) => const ChatbotScreen(),
+        '/Contact': (context) => const ContactUsScreen(),
+
+
+      },
     );
   }
 }
