@@ -19,7 +19,7 @@ class _ChatbotScreenState extends State<ChatbotScreen> {
       // استخدمي مفتاح الـ API الذي استخرجتيه من مشروع kitSpace
       final model = GenerativeModel(
         model: 'gemini-pro',
-        apiKey: 'AIzaSyAxFciPAIhIbWnW2zLCeEjj0gwE5uKzsIw',
+        apiKey: '******************************',
       );
 
       final content = [Content.text(userMessage)];
